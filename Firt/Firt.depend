@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1516790412 source:c:\users\jun\documents\c++\firt\main.cpp
+	<fstream>
+	<cmath>
+
