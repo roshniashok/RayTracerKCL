@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{biblatex}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+
+\title{Ray Tracer}
+\author{MiddleEast Group }
+\date{February 2018}
+\maketitle
+
+
+\begin{document}
+
+\section{Objective}
+Team's aim
+Strategy
+time table
+progress
+
+\section{Project Organisation}
+
+Roles
+Process and Tools
+Meeting and how we are managed 
+
+\end{document}
