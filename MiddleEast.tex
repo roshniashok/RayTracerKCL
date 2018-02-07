@@ -28,7 +28,7 @@ To understand ray tracer you need to know what is "ray"? Basically, ray is a lin
 In the real world, light is reflected on object surfaces until it noticed by the observer (camera or person). \newline Now, this method can not be used while using a computer to simulate a ray tracer. Hence, a revers mechanism is used where the rays are sent out from the observer viewpoint. This is much better in terms of computational speed. 
 \paragraph{}
 Ray tracer technique is based on an algorithm where its builds an image pixel by pixel. It casts additional rays from the hit point to determine the pixel color as shown in Figure 1.
-
+Once the nearest object has been identified, the algorithm will estimate the incoming light at the point of intersection, examine the material properties of the object, and combine this information to calculate the final color of the pixel. In other words we can say that if the light hits the surface and not be blocked,  The shading of the surface is computed using traditional 3D computer graphics shading models. 
 
 \begin{figure}
     \centering
@@ -95,7 +95,7 @@ Week 11 & 25 March  & *Finalizing the project  \\
 \paragraph{}
 Currently, team has searched and studied the basic concepts of ray tracers. Many of the open-source codes helped us to understand the logic behind the program and algorithm used. The team has started working on the GUI to provide an interactive experience to the user where he/she can enter the length, width and the color values. In addition, the user can select the preferred shape from a drop down menu. 
 \newline 
-The team is working on the GUI and the back-end software parallelly to ensure that back-end corresponds to the GUI and therefore does not give rise to problems in the future. We have considered taking an open source project for our project as it is a common algorithm and it's used in all rendering methods. We would like to make modifications to the aforementioned project to align with our GUI and making it more user-responsive. 
+The team is working on the GUI and the back-end software parallelly to ensure that back-end corresponds to the GUI and therefore does not give rise to problems in the future. We have considered taking an open source project for our project as it is a common algorithm and it's used in all rendering methods. We would like to make modifications to the aforementioned project to align with our GUI and making it more user-responsive, as well as adding new features to enhance the program. 
 
 
 
@@ -103,7 +103,7 @@ The team is working on the GUI and the back-end software parallelly to ensure th
 \section{Project Organization}
 
 \subsection{Roles}
-Team has decided to divide the technical work into two halves. Half of the team will work on GUI and the other half will handle the back-end system, as well as the report and the presentation.  
+Initially, the team has decided to divide the technical work into two halves. Half of the team will work on GUI and the other half will handle the back-end system, as well as the report and the presentation.  
 \begin{itemize}
 
 \item \textbf{GUI and report}: Norah Alsuwily, Maryam Yasin, Sara Alotaibi. 
