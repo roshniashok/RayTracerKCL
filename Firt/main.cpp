@@ -1,6 +1,7 @@
 #include <fstream>
 #include <cmath>
 //#include "pngwriter.h"
+// tutorial source https://www.youtube.com/watch?v=ARn_yhgk7aE&t=186s
 
 struct Vec3 {
   double x,y,z;
@@ -61,9 +62,6 @@ int main() {
 
   const Sphere sphere(Vec3(W*0.3, H*0.3, 50), 50);
   const Sphere light(Vec3(0, 0, 50), 1);
-
-  const Sphere sphere2(Vec3(W*0.5, H*0.5, 50), 50);
-  const Sphere light2(Vec3(0, 0, 50), 1);
 
   std::ofstream out("out.ppm");
   out << "P3\n" << W << ' ' << H << ' ' << "255\n";

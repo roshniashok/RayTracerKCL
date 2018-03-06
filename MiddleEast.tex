@@ -28,7 +28,9 @@ To understand ray tracer you need to know what is "ray"? Basically, ray is a lin
 In the real world, light is reflected on object surfaces until it noticed by the observer (camera or person). \newline Now, this method can not be used while using a computer to simulate a ray tracer. Hence, a revers mechanism is used where the rays are sent out from the observer viewpoint. This is much better in terms of computational speed. 
 \paragraph{}
 Ray tracer technique is based on an algorithm where its builds an image pixel by pixel. It casts additional rays from the hit point to determine the pixel color as shown in Figure 1.
+
 Once the nearest object has been identified, the algorithm will estimate the incoming light at the point of intersection, examine the material properties of the object, and combine this information to calculate the final color of the pixel (blog.world-mysteries.com). In other words we can say that if the light hits the surface and not be blocked,  The shading of the surface is computed using traditional 3D computer graphics shading models. 
+
 
 \begin{figure}
     \centering
