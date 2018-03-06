@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>white.png</file>
+        <file>ivory-off-white-paper-texture1.jpg</file>
+        <file>bakground.jpg</file>
+    </qresource>
+</RCC>
