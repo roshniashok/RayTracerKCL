@@ -328,6 +328,83 @@ void makeCube (Vect corner1, Vect corner2, Color color) // uses two points to cr
 
 }
 
+void makePyramid (Vect corner1, Vect corner2, Color color) // uses two points to create the other points and make the cube, uses color to colour in the cube
+                                                           // the two vectors are opposite points to each other
+{
+    // point1's coordinates
+    double c1x = corner1.getVectX();
+    double c1y = corner1.getVectY();
+    double c1z = corner1.getVectZ();
+    // point2's coordinates
+    double c2x = corner2.getVectX();
+    double c2y = corner2.getVectY();
+    double c2z = corner2.getVectZ();
+
+    // the other 2 points of the pyramid that is viewable
+    double x = 0;
+    double y = 0;
+    double z = 0;
+
+    double x2 = 0;
+    double y2 = 0;
+    double z2 = 0;
+
+    x = fabs(c1x - c2x);
+    if (c1y >= c2y)
+    {
+        if(c1x >= c2x)
+        {
+            x = c1x + x;
+            x2 = c1x;
+        }
+        else
+        {
+            x = c2x + x;
+            x2 = c2x;
+        }
+        y = c2y;
+        z = c2z;
+
+        z2 = z + z;
+        y2 = fabs(c1y - c2y)/2;
+    }
+    else
+    {
+        if(c1x >= c2x)
+        {
+            x = c1x + x;
+            x2 = c1x;
+        }
+        else
+        {
+            x = c2x + x;
+            x2 = c2x;
+        }
+        y = c1y;
+        z = c1z;
+
+        z2 = z - z;
+        y2 = fabs(c1y - c2y)/2;
+    }
+
+    Vect A (x, y, z);
+    Vect B (x2, y2, z2);
+
+    // drawing the lines and filling in the shape
+    ///Front Side of pyramid
+    scene_objects.push_back(new Triangle(corner1, corner2, A, color));
+    ///Other Side of pyramid
+    scene_objects.push_back(new Triangle(A, corner2, B, color));
+
+    double red = color.getColorRed() - 0.3;
+    double green = color.getColorGreen() - 0.3;
+    double blue = color.getColorBlue() - 0.3;
+
+    Color darker (red,green,blue,0);
+    ///Bottom Side of pyramid
+    scene_objects.push_back(new Triangle(A, corner1, B, darker));
+}
+
 int thisone;
 
 int main (int argc, char *argv[]) {
@@ -374,6 +451,7 @@ int main (int argc, char *argv[]) {
 	Color pretty_green (0.5, 1.0, 0.75, 0);
 	Color glass (0, 0, 0, 1);
 	Color blue (0.55, 0.4, 1.0, 0);
+	Color light_blue (0.45, 0.85, 1.0, 0);
 	Color tile_floor (1, 1, 1, 2);
 	Color purple (0.95, 0.0, 1.0, 0.4);
 	Color black (0.0, 0.0, 0.0, 0);
@@ -393,6 +471,7 @@ int main (int argc, char *argv[]) {
 	//scene_objects.push_back(dynamic_cast<Object*>(&scene_triangle));
 
 	makeCube(Vect(1.7,1.7,1.7), Vect(0.7,0.7,0.7), blue);
+	makePyramid(Vect(0,0,0), Vect(1,1,1), light_blue);
 
 	//creating light source at (-7,10,-10) so it's a little to the side
 	Vect light_position (-7,10,-10);
