@@ -410,6 +410,57 @@ int thisone;
 int main (int argc, char *argv[]) {
 	cout << "rendering ..." << endl; //tells human when program starts rendering
 
+        string output;
+        string shape = "";
+        string scale = "";
+        string color = "";
+        string translucent = "";
+        string reflection = "";
+
+        ifstream myReadFile;
+        myReadFile.open("Scene.txt");
+
+        int i = 0;
+
+        if (myReadFile.is_open())
+        {
+            while (!myReadFile.eof())
+            {
+
+                for(i; i < 5; i++)
+                {
+                    getline(myReadFile,output);
+                    if(i == 0)
+                    {
+                        shape = output;
+                        break;
+                    }
+                    else if (i == 1)
+                    {
+                        scale = output;
+                        break;
+                    }
+                    else if(i == 2)
+                    {
+                        color = output;
+                        break;
+                    }
+                    else if(i == 3)
+                    {
+                        translucent = output;
+                        break;
+                    }
+                    else
+                    {
+                        reflection = output;
+                        break;
+                    }
+                }
+            i++;
+            }
+        }
+        cout << shape;
+
 	clock_t t1, t2;
 	t1 = clock(); // start time
 
