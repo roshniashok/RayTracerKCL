@@ -1,0 +1,5 @@
+Sphere
+scale to 50
+pink 
+yes
+no
