@@ -15,16 +15,16 @@
 
 Ray Tracing is a rendering technique which takes simple 2D objects such as circles, squares or rectangles and
 produces 3D rendering of these objects in the form of spheres, cubes, cuboids etc.  by tracing the path of light as pixels on a screen space and imitating the effects of the light  with 3D objects. Scenes in ray tracer are defined mathematically by the developer. In addition, it can take data from images and models captured by means such as digital photography. \newline An advantage of ray tracing is that it gives a more realistic and desirable method of rendering. Many physically correct experience can be demonstrated with ease using a ray tracing algorithm, since the algorithm simulates the sign of light in the real world.
-However, it is extremely time consuming to find the intersection between rays and geometry (scratchapixel.com). The main issue with ray tracing is the speed. Anyhow, as computers become more quicker, it is less and less of an obstacle. 
+However, it is extremely time-consuming to find the intersection between rays and geometry (scratchapixel.com). The main issue with ray tracing is the speed. Anyhow, as computers become more quicker, it is less and less of an obstacle. 
 
 \section{Review}
 \subsection{What is Ray Tracer?}
 
 \paragraph{}
-To understand ray tracer you need to know what is "ray"? Basically, ray is a line that starts off at a point into a space towards some direction. When a ray hits a surface its either reflected or refracted.
-In the real world, light is reflected on object surfaces until it noticed by the observer (camera or person). \newline Now, this method can not be used while using a computer to simulate a ray tracer. Hence, a revers mechanism is used where the rays are sent out from the observer viewpoint. This is much better in terms of computational speed. 
+To understand ray tracer you need to know what is "ray"? Basically,a ray is a line that starts off at a point in space towards some direction. When a ray hits a surface it is either reflected or refracted.
+In the real world, light is reflected on object surfaces until it noticed by the observer (camera or person). \newline Now, this method can not be used while using a computer to simulate a ray tracer. Hence, a reverse mechanism is used where the rays are sent out from the observer viewpoint. This is much better in terms of computational speed. 
 \paragraph{}
-Ray tracer technique is based on an algorithm where its builds an image pixel by pixel. It casts additional rays from the hit point to determine the pixel color as shown in Figure 1.
+Ray tracer technique is based on an algorithm where it builds an image pixel by pixel. It casts additional rays from the hit point to determine the pixel color as shown in Figure 1.
 Once the nearest object has been identified, the algorithm will estimate the incoming light at the point of intersection, examine the material properties of the object, and combine this information to calculate the final color of the pixel (blog.world-mysteries.com). In other words we can say that if the light hits the surface and not be blocked,  The shading of the surface is computed using traditional 3D computer graphics shading models. 
 
 \begin{figure}
@@ -40,16 +40,18 @@ http://i.imgur.com/YPSKk.png}
 
 \paragraph{}
 This project aims at developing a Ray Tracer software which consists of two parts. The first part is the GUI, that will allow the end users to insert preferable values in the form of coordinates (x, y) which will be sent to the back-end system as a text file.
-The second part, which is the back-end system will take the input and produce  a 3D image for the end user and this image will be saved as PNG file. 
+The second part, which is the back-end system will take the input and produce a 3D image for the end user and this image will be saved as PNG file. 
 The software will be based on C++ language since all the team members are confident with this language and it is proved that it is fast compared to other programming languages. It has a compiling time of 1.5 seconds according to \textit{ffconsultancy.com }.
 
 
 \section{Design}
 
 \subsection{Requirements}
+
 To achieve our objectives, we need to deliver a ray tracer software (User interface and Back-end system). 
 Basically, our ray tracer software depends on two parts, Front end (GUI) and back-end system. The front end provides a several selection for users where he/she can choose the shape, size and colors. The front-end system will save user preferences as a text file and send it to the back-end system. 
 The back-end system will run and implement the shapes based on user choices.
+
 
 
 \subsection{Design}
@@ -77,17 +79,17 @@ Issues: how to read from text file? How did we resolved it?
 
 
 \section{Team Work}
-The team has decided to divide the technical work into two halves. Half of the team will work on GUI and the other half will handle the back-end system, as well as the report and the presentation. However,  the main roles and responsibilities were divided as below. Each member dedicated to achieve her tasks.
+The team has decided to divide the technical work into two halves. Half of the team will work on GUI and the other half will handle the back-end system, as well as the report and the presentation. However,  the main roles and responsibilities were divided as below. Each member dedicated to achieving her tasks.
 \begin{itemize}
 
 \item \textbf{GUI and report}: Norah Alsuwily, Maryam Yasin, Sara Alotaibi. 
 \item \textbf{Back-end and presentation}: Roshini Ashokkumar, Nandhini Sreekumar, Tamanna Qureshi. 
 \end{itemize}
-This way we are able to efficiently manage the load of this project to ensure that every team member is allocated with balanced workload. Thus, ensuring that the project proceed smoothly and successfully.
+This way we are able to efficiently manage the load of this project to ensure that every team member is allocated with the balanced workload. Thus, ensuring that the project proceeds smoothly and successfully.
 
 
 
-At the beginning of this project the Middle-East team sat a plan to follow as you can see in below table. 
+At the beginning of this project, the Middle-East team sat a plan to follow as you can see in below table. 
 
 \begin{center}
 \begin{tabular}{ |c|c|c|} 
@@ -133,6 +135,7 @@ Week 11 & 25 March  & *Finalizing the project  \\
 This section tells about the team's operations and tools used to manage the work as below.   
 \begin{itemize}
 
+
 \item Meeting and Communication: Team groups in every project need to communicate in a formal way to follow the time line and watch the progress for their project. As well as negotiate and get feedback to enhance and reflect team’s suggestions. To do that we used couple of applications like Slack and Whatsapp to be up to date. As well as physical meetings in the college, which was every Tuesday at 1 O’clock since it suites all team members to meet and discuss previous and next agenda. 
 \item Development: Our system was divided into parts where we used to two softwares to develop the code. We chose QT creator and CodeBlock since they are:
 \begin{itemize}
@@ -143,12 +146,13 @@ This section tells about the team's operations and tools used to manage the work
 \end{itemize}
 \item Documentation: Each project needs to be documented and presented in a good way. There are many documentation programs, however, we chose Latex and Powerpoint since they satisfy college requirement, free and easy to use. 
 
+
 \end{itemize}
 
 
 
 \subsection{Meeting Management} 
-Team has agreed to meet regularly every week on Tuesday and divide the tasks fairly according to each teammate's skills. The progress will be monitored every week and comments from every team member will be adhered to. \newline If there are any personal circumstances that will prevent the teammates from completing the task, she will need to follow it up in the following week and failure to do so, will definitely reflect on her marks based on Berger algorithm at the end of the project as the marks are based on her work and efforts that she has put into this project in this way we can efficiently handle peer assessment without any conflicts. 
+The team has agreed to meet regularly every week on Tuesday and divide the tasks fairly according to each teammate's skills. The progress will be monitored every week and comments from every team member will be adhered to. \newline If there are any personal circumstances that will prevent the teammates from completing the task, she will need to follow it up in the following week and failure to do so, will definitely reflect on her marks based on Berger algorithm at the end of the project as the marks are based on her work and efforts that she has put into this project in this way we can efficiently handle peer assessment without any conflicts. 
 
 \section{Evaluation}
 \section{Peer Assessment}
@@ -176,4 +180,6 @@ Tamanna Qureshi  & 16.66 Points  \\
 
 \end{tabular}
 \end{center}
+
+
 \end{document}
