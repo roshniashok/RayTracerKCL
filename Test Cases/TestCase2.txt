@@ -1,5 +1,5 @@
-Circle
+Trianlge
 Scale to 50%
-red
+pink
 No
-Yes
+No

@@ -9,6 +9,9 @@
 #include <QFile>
 #include <QTextStream>
 #include <QString>
+#include<string>
+#include<iostream>
+#include<fstream>
 
 
 Appwindow::Appwindow()
@@ -149,7 +152,22 @@ QVariant Appwindow::currentItemData(QComboBox *comboBox)
 
 void Appwindow::saveToFile()
 {
-    QString filename="Scene.txt";
+    //converting qstring to string
+    std::ofstream file;
+    file.open("Scene.txt");
+    std::string shape=shapeComboBox->currentText().toStdString();
+    std::string size=sizeComboBox->currentText().toStdString();
+    std::string color=colorComboBox->currentText().toStdString();
+    std::string trans=translucentComboBox->currentText().toStdString();
+    std::string reflec=reflectiveComboBox->currentText().toStdString();
+
+    file<<shape<<"\n"<<size<<"\n"<<color<<"\n"<<trans<<"\n"<<reflec;
+
+  QMessageBox msgBox;
+    msgBox.setText("The file has been saved");
+    msgBox.exec();
+    
+    /* QString filename="Scene.txt";
     QFile file(filename);
     if(file.open(QIODevice::ReadWrite|QIODevice::Truncate|QIODevice::Text))
     {
@@ -158,7 +176,7 @@ void Appwindow::saveToFile()
         out<<sizeComboBox->currentText()<<"\r\n";
         out<<colorComboBox->currentText()<<"\r\n";
         out<<"\r\n";
-    }
+    }*/
 
 }
 
