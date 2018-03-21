@@ -71,12 +71,188 @@ Benefits of C++
 \end{itemize}
 
 \section{Implementation}
-To start working with ray tracer software we have to learn the basic things of ray tracer concept and it structure. Many of sites and tutorials helped us to build our knowledge and to have better understanding. 
-The front-end system was built through QT creator software where it depends on several classes.
-Issues: save as text file? How did we resolved it
+\subsection{Implementation}
+To start working with ray tracer software we have to learn the basic things of ray tracer concept and it structure. Many of sites and tutorials helped us to build our knowledge and to have better understanding. The front-end system was built through QT creator software where it depends on several classes. Issues: save as text file? How did we resolved it   
+During the implementation we straggled on reading user’s input that we received as a text file from the front-end and we were able to manage it by converting from abstract type string into concrete type string which has solved the problem as you can see in below code: 
 
-The back-end system was build through CodeBlocks software, in help with learning tutorial [2].
-Issues: how to read from text file? How did we resolved it?
+The back-end system was build through CodeBlocks software, in help with learning tutorial [2]. Basically, receive a text file from the front-end and it will read it as variables. These variables will be converted to data values that can be used to draw the shape in terms of the size and other aspects of the shape.  
+
+
+Below code shows how to read the data from text file that was pushed from the front-end. This was in to enable us to manipulate the data to be able to draw shapes.
+
+A problem occurred when trying to run the code in different machines, as the user name will changed according to the user’s machines name causing the directory used in the code to be incorrect. To solve this problem we used DWORD type, as it will take the user name’s length from the system. In addition, we used GetUserName method where it use character array and the user name’s length to retrieve the user’s machine name. 
+
+
+\begin{lstlisting}
+string output;
+       string shape = "";
+       string scale = "";
+       double shapeSize = 0.5;
+       string color = "";
+       string translucent = "";
+       string reflection = "";
+
+       char uname[UNLEN+1];
+       DWORD username_len = UNLEN+1;
+       GetUserName(uname, &username_len);
+       string username(uname);
+
+       std::stringstream ss;
+       //ss << "C:\\Users\\" << username << "\\Documents\\A Kings\\Group Work\\RayTraceFrontEnd\\Scene.txt";
+       ss << "C:\\Users\\" << username << "\\Documents\\GitHub\\RayTracerKCL\\RayTraceFrontEnd\\Scene.txt";
+       std::string fileLocation = ss.str();
+
+       ifstream myReadFile;
+       myReadFile.open(fileLocation);
+
+       int i = 0;
+
+       if (myReadFile.is_open())
+       {
+           while (!myReadFile.eof())
+           {
+               for(i; i < 5; i++)
+               {
+                   getline(myReadFile,output);
+                   if(i == 0)
+                   {
+                       shape = output;
+                       break;
+                   }
+                   else if (i == 1)
+                   {
+                       scale = output;
+                       break;
+                   }
+                   else if(i == 2)
+                   {
+                       color = output;
+                       break;
+                   }
+                   else if(i == 3)
+                   {
+                       translucent = output;
+                       break;
+                   }
+                   else
+                   {
+                       reflection = output;
+                       break;
+                   }
+               }
+           i++;
+           }
+       }
+
+
+
+\end{lstlisting}
+
+Another section in the code, where it implement all the intersections and makes the object visible in the scene, so it will not show as a black scene.  It does the light intersections with the object so that they have shading. It also has the second hand intersection where it enables surfaces to be reflective.  
+\begin{lstlisting}
+
+Color intersection_color = getColorAt(intersection_position,
+intersecting_ray_direction, scene_objects,
+index_of_winning_object,
+light_sources, accuracy, ambientlight); \end{lstlisting}
+
+One important variable is (aadepth) where it does the anti-aliasing function making the images smoother. In that way we do not have edges on a smooth surface.  Basically, this variable will start from value (1) and above. But the higher the value, the more time it will take to render the image and effecting the processing time. And although, the image will be nicer and smoother, it will take too long to render the image as it will take over 10 seconds to create the image.  Therefore, we settled to maintain the value at 1.
+\begin{lstlisting}
+int aadepth = 1;
+\end{lstlisting}
+
+Our code depends on saving PNG images, to do this we had to use below method to convert PPM into PNG, as there no standard libraries to implement this. 
+\begin{lstlisting}
+savepng("scene.png",width,height,dpi,pixels);
+\end{lstlisting}
+
+
+The Object Class is the parent class to all object classes, so no objects will be possible to be in the scene without this class. As the Sphere and Plane classes are children of the Object class and the Cube and Pyramid are implemented using the Triangle class, which too is a child class of the Object class.
+
+\begin{lstlisting}
+class Object {
+    public: 
+
+    Object (); 
+
+    
+    virtual Color getColor () { return Color (0.0, 0.0, 0.0, 0); } 
+    virtual Vect getNormalAt(Vect intersection_position) {
+        return Vect (0, 0, 0);
+    }
+
+   // function that returns ray intersection
+    virtual double findIntersection(Ray ray) {
+        return 0; // for no objects intersection is 0
+    }
+
+};
+
+\end{lstlisting}
+ \newpage
+\subsection{Testing}
+Any project need to be tested in different ways to make sure that it meets the project’s objectives. For that you demonstrated several case scenarios to check the performance and the result of the program. \newline
+
+\begin{itemize}
+    \item First case scenario: \newline
+    User will choose Square shape, scale 25 percent, in pink color. There will be no transparency, but there will be reflectivity. 
+    
+   \begin{figure}[H]
+\centering
+\includegraphics[scale=1]{T1.png}
+\caption{The Unit Circle \label{fig1}}
+\end{figure}
+
+ 
+ \begin{figure}
+    \centering
+    \includegraphics{T1-1.png}
+    \caption{Result}
+    \label{fig3}
+\end{figure}
+
+
+
+\item Second case scenario: \newline
+User will choose Circle shape, scale 50 percent, in Purple color. There will be a transparency and reflectivity. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.5]{T2.png}
+\caption{The Unit Circle \label{fig1}}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics{T2-2.png}
+    \caption{Result}
+    \label{fig5}
+\end{figure}
+
+\item Third case scenario: \newline
+User will choose Circle shape, scale 100 percent, in Purple color. There will be no transparency but there will be reflectivity.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.5]{T3.png}
+\caption{The Unit Circle \label{fig1}}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics{T3-3.png}
+    \caption{Result}
+    \label{fig5}
+\end{figure}
+
+\item Forth case scenario: \newline
+User will choose Circle shape, scale 0 percent, in yellow color. There will be no transparency but there will be reflectivity.
+
+\end{itemize}
+
+
+
+ \newpage
 
 
 
