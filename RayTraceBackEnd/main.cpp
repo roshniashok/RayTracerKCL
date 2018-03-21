@@ -438,14 +438,14 @@ double getShapeSize(string scale,double shapeSize)
 
 Color ifTranslucentOrReflective(string translucent, string reflective, Color color)
 {
-    if(translucent == "yes")
+    if(translucent == "Yes")
     {
         color.setColorRed(0.0);
         color.setColorGreen(0.0);
         color.setColorBlue(0.0);
         color.setColorSpecial(1.0);
     }
-    else if(reflective == "yes")
+    else if(reflective == "Yes")
     {
         color.setColorSpecial(0.4);
     }
