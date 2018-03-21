@@ -1,4 +1,5 @@
-Circle
-Scale to 75%
-lightpink
-
+Circle
+Scale to 50%
+red
+No
+Yes
