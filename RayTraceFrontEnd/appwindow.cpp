@@ -158,12 +158,14 @@ void Appwindow::saveToFile()
     std::string shape=shapeComboBox->currentText().toStdString();
     std::string size=sizeComboBox->currentText().toStdString();
     std::string color=colorComboBox->currentText().toStdString();
-    //std::string trans=translucentComboBox->currentText().toStdString();
-    //std::string reflec=reflectiveComboBox->currentText().toStdString();
+    std::string trans=translucentComboBox->currentText().toStdString();
+    std::string reflec=reflectiveComboBox->currentText().toStdString();
 
     file<<shape<<"\n"<<size<<"\n"<<color<<"\n"<<trans<<"\n"<<reflec;
 
-  
+  QMessageBox msgBox;
+    msgBox.setText("The file has been saved");
+    msgBox.exec();
     
     /* QString filename="Scene.txt";
     QFile file(filename);
