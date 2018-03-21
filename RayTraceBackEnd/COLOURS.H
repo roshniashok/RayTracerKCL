@@ -52,7 +52,7 @@ class Colours{
   else if (color==white){
     Color white (1.0,1.0,1.0,0.0);
   }
-  else (color==yellow){
+  else if (color==yellow){
     Color yellow (1.0,1.0,0.1,0.0);
   }
   
@@ -143,5 +143,52 @@ else if (color==lavenderblush){
 
     Color lavenderblush (0.8,0.6,0.7,0.0);
 }
-
+ else if (color==darkolivegreen){
+    Color darkolivegreen (0.4,0.5,0.2,0.0);
+  }
+else if (color==darkorange){
+    Color darkorange (0.9,0.5,0.1,0.0);
+  }
+else if (color==darkorchid){
+    Color darkorchid (0.6,0.2,0.8,0.0);
+  }
+else if (color==darksalmon){
+    Color darksalmon (1.0,0.6,0.5,0.0);
+  }
+else if (color==darkseagreen){
+    Color darkseagreen (0.5,0.7,0.5,0.0);
+  }
+else if (color==darkslateblue){
+    Color darkslateblue (0.2,0.2,0.5,0.0);
+  }
+else if (color==darkslategray){
+    Color darkslategray (0.1,0.3,0.3,0.0);
+  }
+else if (color==darkturquoise){
+    Color darkturquoise (0.2,0.8,0.8,0.0);
+  }
+else if (color==darkviolet){
+    Color darkviolet (0.6,0.1,0.8,0.0);
+  }
+else if (color==deeppink){
+    Color deeppink (1.0,0.1,0.6,0.0);
+  }
+else if (color==deepskyblue){
+    Color deepskyblue (0.0,0.8,1.0,0.0);
+  }
+else if (color==dimgray){
+    Color dimgray (0.8,0.8,0.8,0.0);
+  }
+else if (color==dimgrey){
+    Color dimgrey (0.8,0.8,0.8,0.0);
+  }
+else if (color==dodgerblue){
+    Color dodgerblue (0.0,0.6,1.0,0.0);
+  }
+else if (color==firebrick) {
+    Color firebrick (0.7,0.1,0.0,0.0);
+  }
+else if (color==floralwhite){
+    Color floralwhite (1.0,1.0,0.9,0.0);
+  }
 }
