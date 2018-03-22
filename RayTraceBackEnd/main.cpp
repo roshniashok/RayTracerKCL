@@ -291,12 +291,6 @@ Color getColorAt(Vect intersection_position, Vect intersecting_ray_direction, ve
 
 vector<Object*> scene_objects; // array of objects in the scene
 
-void makeSphere (Vect location, double radius, Color color)
-{
-    Sphere scene_sphere (location, radius, color);
-    scene_objects.push_back(dynamic_cast<Object*>(&scene_sphere));
-}
-
 void makeCube (Vect corner1, Vect corner2, Color color) // uses two points to create the other points and make the cube, uses color to colour in the cube
                                                         // the two vectors are opposite points to each other
 {
@@ -360,6 +354,7 @@ void makePyramid (Vect corner1, Vect corner2, Color color) // uses two points to
     double y2 = 0;
     double z2 = 0;
 
+    // generating other points
     x = fabs(c1x - c2x);
     if (c1y >= c2y)
     {
@@ -465,7 +460,7 @@ Color getColour(string color)
 
 int thisone;
 
-int main (int argc, char *argv[]) { ///##################################################################################################################################
+int main (int argc, char *argv[]) {
 	cout << "rendering ..." << endl; //tells human when program starts rendering
 
         string output;
@@ -482,7 +477,6 @@ int main (int argc, char *argv[]) { ///#########################################
         string username(uname);
 
         std::stringstream ss;
-        //ss << "C:\\Users\\" << username << "\\Documents\\A Kings\\Group Work\\RayTraceFrontEnd\\Scene.txt";
         ss << "C:\\Users\\" << username << "\\Documents\\GitHub\\RayTracerKCL\\RayTraceFrontEnd\\Scene.txt";
         std::string fileLocation = ss.str();
 
@@ -573,7 +567,6 @@ int main (int argc, char *argv[]) { ///#########################################
     shapeColor = ifTranslucentOrReflective(translucent,reflection,shapeColor);
 
 	Sphere scene_sphere (O, getShapeSize(scale,shapeSize), shapeColor);
-    cout << shape;
 	if(shape == "Circle")
     {
         scene_objects.push_back(dynamic_cast<Object*>(&scene_sphere));
