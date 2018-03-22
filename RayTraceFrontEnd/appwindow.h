@@ -44,6 +44,8 @@ private:
     QComboBox *shapeComboBox;
     QComboBox *sizeComboBox;
     QComboBox *colorComboBox;
+    QComboBox *translucentComboBox;
+    QComboBox *reflectiveComboBox;
     QList<QPainterPath> shapes;
 };
 

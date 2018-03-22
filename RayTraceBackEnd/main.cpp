@@ -5,10 +5,15 @@
 #include <vector>
 #include <cmath>
 #include <limits>
+#include <algorithm>
+#include <cctype>
+#include <locale>
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <windows.h>
+#include <Lmcons.h>
 
 #include "Vect.h"
 #include "Ray.h"
@@ -246,14 +251,14 @@ Color getColorAt(Vect intersection_position, Vect intersecting_ray_direction, ve
 			}
 
 			// loop through array of secondary intersections
-			for (int c = 0; c < secondary_intersections.size(); c++) {
+			/*for (int c = 0; c < secondary_intersections.size(); c++) {
 				if (secondary_intersections.at(c) > accuracy) { // if second intersection is better than accuracy then we get that color
 					if (secondary_intersections.at(c) <= distance_to_light_magnitude) { // closest pixel is shaded
 						shadowed = true;
 					}
 				}
 				break;
-			}
+			}*/
 
 			if (shadowed == false) {
                 // linear algebra behind the shading
@@ -286,6 +291,12 @@ Color getColorAt(Vect intersection_position, Vect intersecting_ray_direction, ve
 
 vector<Object*> scene_objects; // array of objects in the scene
 
+void makeSphere (Vect location, double radius, Color color)
+{
+    Sphere scene_sphere (location, radius, color);
+    scene_objects.push_back(dynamic_cast<Object*>(&scene_sphere));
+}
+
 void makeCube (Vect corner1, Vect corner2, Color color) // uses two points to create the other points and make the cube, uses color to colour in the cube
                                                         // the two vectors are opposite points to each other
 {
@@ -307,21 +318,21 @@ void makeCube (Vect corner1, Vect corner2, Color color) // uses two points to cr
     Vect F (c1x, c2y, c2z);
 
     // drawing the lines and filling in the shape using a 2 triangles to fill in 1 side
-    ///Back Side of cube      ### this side will not be seen ###
-    //scene_objects.push_back(new Triangle(D, A, corner1, color));
-    //scene_objects.push_back(new Triangle(corner1, E, D, color));
-    ///Left Side of cube      ### this side will not be seen ###
-    //scene_objects.push_back(new Triangle(corner2, B, A, color));
-    //scene_objects.push_back(new Triangle(A, D, corner2, color));
     ///Front Side of cube
-    scene_objects.push_back(new Triangle(F, C, B, color));
-    scene_objects.push_back(new Triangle(B, corner2, F, color));
+    scene_objects.push_back(new Triangle(D, A, corner1, color));
+    scene_objects.push_back(new Triangle(corner1, E, D, color));
     ///Right Side of cube
-    scene_objects.push_back(new Triangle(E, corner1, C, color));
-    scene_objects.push_back(new Triangle(C, F, E, color));
-    ///Bottom Side of cube    ### this side will not be seen ###
-    //scene_objects.push_back(new Triangle(D, E, F, color));
-    //scene_objects.push_back(new Triangle(F, corner2, D, color));
+    scene_objects.push_back(new Triangle(corner2, B, A, color));
+    scene_objects.push_back(new Triangle(A, D, corner2, color));
+    ///Back Side of cube      ### this side will not be seen ###
+    //scene_objects.push_back(new Triangle(F, C, B, color));
+    //scene_objects.push_back(new Triangle(B, corner2, F, color));
+    ///Left Side of cube      ### this side will not be seen ###
+    //scene_objects.push_back(new Triangle(E, corner1, C, color));
+    //scene_objects.push_back(new Triangle(C, F, E, color));
+    ///Top Side of cube
+    scene_objects.push_back(new Triangle(D, E, F, color));
+    scene_objects.push_back(new Triangle(F, corner2, D, color));
     ///Top Side of cube       ### this side will not be seen ###
     //scene_objects.push_back(new Triangle(corner1, A, B, color));
     //scene_objects.push_back(new Triangle(B, C, corner1, color));
@@ -404,21 +415,79 @@ void makePyramid (Vect corner1, Vect corner2, Color color) // uses two points to
     ///Bottom Side of pyramid
     scene_objects.push_back(new Triangle(A, corner1, B, darker));
 }
+double getShapeSize(string scale,double shapeSize)
+{
+    if(scale == "Scale to 25%")
+    {
+        shapeSize = shapeSize + 0.25;
+    }
+    else if(scale == "Scale to 50%")
+    {
+        shapeSize = shapeSize + 0.5;
+    }
+    else if (scale == "Scale to 75%")
+    {
+        shapeSize = shapeSize + 0.75;
+    }
+    else
+    {
+        shapeSize = shapeSize + 1.0;
+    }
+    return shapeSize;
+}
+
+Color ifTranslucentOrReflective(string translucent, string reflective, Color color)
+{
+    if(translucent == "Yes")
+    {
+        color.setColorRed(0.0);
+        color.setColorGreen(0.0);
+        color.setColorBlue(0.0);
+        color.setColorSpecial(1.0);
+    }
+    else if(reflective == "Yes")
+    {
+        color.setColorSpecial(0.4);
+    }
+    return color;
+}
+
+Color getColour(string color)
+{
+    if(color == "pink")
+    {
+        Color colour (1.0,0.6,0.9,0.0);
+        return colour;
+    }
+    Color purple (0.95, 0.0, 1.0, 0.4);
+    return purple;
+}
 
 int thisone;
 
-int main (int argc, char *argv[]) {
+int main (int argc, char *argv[]) { ///##################################################################################################################################
 	cout << "rendering ..." << endl; //tells human when program starts rendering
 
         string output;
         string shape = "";
         string scale = "";
+        double shapeSize = 0.5;
         string color = "";
         string translucent = "";
         string reflection = "";
 
+        char uname[UNLEN+1];
+        DWORD username_len = UNLEN+1;
+        GetUserName(uname, &username_len);
+        string username(uname);
+
+        std::stringstream ss;
+        //ss << "C:\\Users\\" << username << "\\Documents\\A Kings\\Group Work\\RayTraceFrontEnd\\Scene.txt";
+        ss << "C:\\Users\\" << username << "\\Documents\\GitHub\\RayTracerKCL\\RayTraceFrontEnd\\Scene.txt";
+        std::string fileLocation = ss.str();
+
         ifstream myReadFile;
-        myReadFile.open("Scene.txt");
+        myReadFile.open(fileLocation);
 
         int i = 0;
 
@@ -426,7 +495,6 @@ int main (int argc, char *argv[]) {
         {
             while (!myReadFile.eof())
             {
-
                 for(i; i < 5; i++)
                 {
                     getline(myReadFile,output);
@@ -459,7 +527,6 @@ int main (int argc, char *argv[]) {
             i++;
             }
         }
-        cout << shape;
 
 	clock_t t1, t2;
 	t1 = clock(); // start time
@@ -482,9 +549,6 @@ int main (int argc, char *argv[]) {
 	Vect Y (0,1,0);
 	Vect Z (0,0,1);
 
-	Vect new_sphere_location (1.75, -0.25, 0);
-	Vect third_sphere_locatin (-2,1,0);
-
 	Vect campos (3, 1.5, -4); // camera position (position is above plane)
 
 	Vect look_at (0, 0, 0); // look_at starts at origin
@@ -499,30 +563,38 @@ int main (int argc, char *argv[]) {
 	Camera scene_cam (campos, camdir, camright, camdown); // camera instance (make camera)
 
 	Color white_light (1.0, 1.0, 1.0, 0);
-	Color pretty_green (0.5, 1.0, 0.75, 0);
 	Color glass (0, 0, 0, 1);
-	Color blue (0.55, 0.4, 1.0, 0);
-	Color light_blue (0.45, 0.85, 1.0, 0);
 	Color tile_floor (1, 1, 1, 2);
-	Color purple (0.95, 0.0, 1.0, 0.4);
+	Color shapeColor = getColour(color);
 	Color black (0.0, 0.0, 0.0, 0);
 
-	// scene objects
-	Sphere scene_sphere (O, 0.8, pretty_green); // green sphere has radius 1 and is located at origin
-	Sphere scene_sphere2 (new_sphere_location, 0.4, glass);
-	Sphere scene_sphere3 (third_sphere_locatin, 0.4, purple);
+	// scene objects responding to user created text file
+
+    shapeColor = ifTranslucentOrReflective(translucent,reflection,shapeColor);
+
+	Sphere scene_sphere (O, getShapeSize(scale,shapeSize), shapeColor);
+    cout << shape;
+	if(shape == "Circle")
+    {
+        scene_objects.push_back(dynamic_cast<Object*>(&scene_sphere));
+    }
+    else if (shape == "Square")
+    {
+        shapeSize = 1.0;
+        shapeSize = getShapeSize(scale,shapeSize);
+        makeCube(Vect(0,0,0), Vect(shapeSize,shapeSize,shapeSize), shapeColor);
+    }
+    else
+    {
+        shapeSize = 1.0;
+        shapeSize = getShapeSize(scale,shapeSize);
+        makePyramid(Vect(0,0,0), Vect(shapeSize,shapeSize,shapeSize), shapeColor);
+    }
+
 	Plane scene_plane (Y, -1, tile_floor); // plane will be directly under the pretty green sphere
-	//Triangle scene_triangle (Vect(3,0,0), Vect(0,3,0), Vect(0,0,3), blue); // to create a triangle in the scene, triangles can be used to make a cube
 
 	// adding scene objects to the scene through scene_objects array
-	scene_objects.push_back(dynamic_cast<Object*>(&scene_sphere)); // push objects to the scene
-	scene_objects.push_back(dynamic_cast<Object*>(&scene_sphere2));
-	scene_objects.push_back(dynamic_cast<Object*>(&scene_sphere3));
 	scene_objects.push_back(dynamic_cast<Object*>(&scene_plane));
-	//scene_objects.push_back(dynamic_cast<Object*>(&scene_triangle));
-
-	makeCube(Vect(1.7,1.7,1.7), Vect(0.7,0.7,0.7), blue);
-	makePyramid(Vect(0,0,0), Vect(1,1,1), light_blue);
 
 	//creating light source at (-7,10,-10) so it's a little to the side
 	Vect light_position (-7,10,-10);
