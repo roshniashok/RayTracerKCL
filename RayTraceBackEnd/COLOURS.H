@@ -424,5 +424,57 @@ else if (color==floralwhite){
  else if (color==navy){
     Color navy (0.0,0.0,0.5,0.0);
   }
+ else if (color==oldlace){
+    Color oldlace (1,0.9,1,0.0);
+  }
+   else if (color==olive){
+    Color olive (0.7,0.7,0.3,0.0);
+  } 
+  else if (color==olivedrab){
+    Color olivedrab (0.5,0.5,0.3,0.0);
+  }
+   else if (color==orange){
+    Color orange (1,0.6,0.0,0.0);
+  }
+   else if (color==orangered){
+    Color orangered (1,0.3,0.2,0.0);
+  }
+   else if (color==Orchid){
+    Color Orchid (0.9,0.4,0.9,0.0);
+  }
+   else if (color==palegoldenrod){
+    Color palegoldenrod (1,0.9,0.6,0.0);
+  }
+   else if (color==palegreen){
+    Color palegreen (0.6,1,0.6,0.0);
+  }
+    else if (color==paleturquoise){
+    Color paleturquoise (0.7,1,1,0.0);
+  }
 
+   else if (color==palevioletred){
+    Color palevioletred (0.9,0.4,0.8,0.0);
+  }
+   else if (color==papayawhip){
+    Color papayawhip (1,0.9,0.8,0.0);
+  } 
+  else if (color==peachpuff){
+    Color peachpuff (1,0.7,0.6,0.0);
+  }
+   else if (color==Peru){
+    Color Peru (0.9,0.5,0.2,0.0);
+  }
+   else if (color==pink){
+    Color pink (1,0,0.7,0.0);
+  }
+   else if (color==plum){
+    Color plum (0.4,0.1,0.6,0.0);
+  }
+   else if (color==powderblue){
+    Color powderblue (0.8,1,1,0.0);
+  }
+   else if (color==purple){
+    Color purple (0.6,0.1,0.9,0.0);
+  }
+   
 }
