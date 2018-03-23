@@ -265,4 +265,91 @@ else if (color==floralwhite){
   {
       Color limegreen(0.4,1,0.2,0);
   }
+  else if(color==aliceblue)
+  { Color aliceblue(0.0,0.7,0.1);
+  }
+  else if(color==antiquewhite)
+  {
+    Color antiquewhite(1.0,0.9,0.8);
+  }
+  else if(color==aqua)
+  {
+    Color aqua(0.0,1.0,0.9);
+  }
+  else if(color==aquamarine)
+  {
+    Color aquamarine(0.1,1.0,0.8);
+  }
+  else if(color==beige)
+  {
+    Color beige(0.8,0.8,0.6);
+  }
+  else if(color==azure)
+  {
+    Color azure(0.8,0.9,0.9);
+  }
+  else if(color==bisque)
+  {
+    Color bisque(1,0.8,0.5);
+  }
+ else if(color==blanchedalmond)
+  {
+    Color blanchedalmond(1,0.9,0.8);
+  }
+  else if(color==blueviolet)
+  {
+    Color blueviolet(0.5,0.3,0.8);
+  }
+  else if(color==burlywood)
+  {
+    Color burlywood(0.8,0.5,0.4);
+  }
+  else if(color==brown)
+  {
+    Color brown(0.8,0.4,0.0);
+  }
+  else if(color==cadetblue)
+  {
+    Color cadetblue(0.2,0.6,0.5);
+  }
+  else if(color==chartreuse)
+  {
+    Color chartreuse(0.8,0.9,0.0);
+  }
+  else if(color==chocolate)
+  {
+    Color chocolate(0.8,0.4,0.0);
+  }
+  else if(color==coral)
+  {
+    Color coral(0.9,0.5,0.5);
+  }
+  else if(color==cornflowerblue)
+  {
+    Color cornflowerblue(0.4,0.5,0.1);
+  }
+  else if(color==cornfsilk)
+  {
+    Color cornsilk(0.9,0.9,0.5);
+  }
+  else if(color==crimson)
+  {
+    Color crimson(0.9,0.9,0.5);
+  }
+  else if(color==crimson)
+  {
+    Color crimson(0.6,0.2,0.2);
+  }
+  else if(color==darkgoldenrod)
+  {
+    Color darkgoldenrod(0.7,0.5,0.1);
+  }
+  else if (color==darkgrey)
+  {
+    Color darkgrey(0.6,0.6,0.6);
+  }
+  else if (color==darkkhaki)
+  {
+    Color darkkhaki(0.7,0.7,0.4);
+  }
 }
