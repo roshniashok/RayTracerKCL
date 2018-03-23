@@ -476,5 +476,31 @@ else if (color==floralwhite){
    else if (color==purple){
     Color purple (0.6,0.1,0.9,0.0);
   }
-   
+       else if (color==Thistle){
+    Color Thistle (0.7,0.7,1,0.0);
+  }
+   else if (color==tomato){
+    Color tomato (1,0.5,0.5,0.0);
+  } 
+  else if (color==transparent){
+    Color transparent(1,1,1,0.0);
+  }
+   else if (color==turquoise){
+    Color turquoise (0.6,1,1,0.0);
+  }
+   else if (color==violet){
+    Color violet(0.4,0,1,0.0);
+  }
+   else if (color==wheat){
+    Color wheat (1,0.9,0.7,0.0);
+  }
+   else if (color==whitesmoke){
+    Color whitesmoke (0.9,0.9,0.9,0.0);
+  }
+   else if (color==yellow){
+    Color yellow  (1,1,0.0,0.0);
+  }
+    else if (color==yellowgreen){
+    Color yellowgreen (0.7,0.9,0.1,0.0);
+  }
 }
