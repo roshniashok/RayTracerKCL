@@ -12,6 +12,7 @@
 #include<string>
 #include<iostream>
 #include<fstream>
+#include<QMessageBox>
 
 
 Appwindow::Appwindow()
@@ -44,6 +45,25 @@ Appwindow::Appwindow()
 
     colorLabel=new QLabel(tr("&Color:"));
     colorLabel->setBuddy(colorComboBox);
+    
+    //Translucent option
+    translucentComboBox=new QComboBox;
+    translucentComboBox->addItem(tr("Yes"));
+    translucentComboBox->addItem(tr("No"));
+
+
+    translucentLabel=new QLabel(tr("&Make the image Translucent:"));
+    translucentLabel->setBuddy(translucentComboBox);
+
+    //Reflective option
+    reflectiveComboBox=new QComboBox;
+    reflectiveComboBox->addItem(tr("Yes"));
+    reflectiveComboBox->addItem(tr("No"));
+
+
+    reflectiveLabel=new QLabel(tr("&Make the image Reflective:"));
+    reflectiveLabel->setBuddy(reflectiveComboBox);
+
 
     //Save to a file
     saveButton = new QPushButton(tr("&Save"));
@@ -76,6 +96,10 @@ Appwindow::Appwindow()
     mainLayout->addWidget(sizeComboBox, 2,1,1,3);
    mainLayout->addWidget(colorLabel, 3,0);
    mainLayout->addWidget(colorComboBox, 3,1,1,3);
+     mainLayout->addWidget(translucentLabel, 4,0);
+    mainLayout->addWidget(translucentComboBox, 4,1,1,3);
+    mainLayout->addWidget(reflectiveLabel, 5,0);
+    mainLayout->addWidget(reflectiveComboBox, 5,1,1,3);
    mainLayout->addWidget(saveButton,5,1,Qt::AlignRight);
    mainLayout->addWidget(closeButton,5,2,Qt::AlignLeft);
 
