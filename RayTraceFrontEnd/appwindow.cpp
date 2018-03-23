@@ -12,6 +12,7 @@
 #include<string>
 #include<iostream>
 #include<fstream>
+#include<QMessageBox>
 
 
 Appwindow::Appwindow()
@@ -44,6 +45,25 @@ Appwindow::Appwindow()
 
     colorLabel=new QLabel(tr("&Color:"));
     colorLabel->setBuddy(colorComboBox);
+    
+    //Translucent option
+    translucentComboBox=new QComboBox;
+    translucentComboBox->addItem(tr("Yes"));
+    translucentComboBox->addItem(tr("No"));
+
+
+    translucentLabel=new QLabel(tr("&Make the image Translucent:"));
+    translucentLabel->setBuddy(translucentComboBox);
+
+    //Reflective option
+    reflectiveComboBox=new QComboBox;
+    reflectiveComboBox->addItem(tr("Yes"));
+    reflectiveComboBox->addItem(tr("No"));
+
+
+    reflectiveLabel=new QLabel(tr("&Make the image Reflective:"));
+    reflectiveLabel->setBuddy(reflectiveComboBox);
+
 
     //Save to a file
     saveButton = new QPushButton(tr("&Save"));
