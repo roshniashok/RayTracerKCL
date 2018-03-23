@@ -353,4 +353,76 @@ else if (color==floralwhite){
     Color darkkhaki(0.7,0.7,0.4);
   }
 
+ else if (color==linen){
+    Color linen (1.0,0.9,0.8,0.0);
+  }
+
+ else if (color==magenta){
+    Color magenta (1.0,0.0,1.0,0.0);
+  }
+
+ else if (color==maroon){
+    Color maroon (0.5,0.0,0.0,0.0);
+  }
+
+ else if (color==mediumaquamarine){
+    Color mediumaquamarine (0.4,0.8,0.7,0.0);
+  }
+
+ else if (color==mediumblue){
+    Color mediumblue (0.0,0.0,0.8,0.0);
+  }
+
+ else if (color==mediumorchid){
+    Color mediumorchid (0.7,0.3,0.8,0.0);
+  }
+
+ else if (color==mediumpurple){
+    Color mediumpurple (0.5,0.4,0.8,0.0);
+  }
+
+ else if (color==mediumseagreen){
+    Color mediumseagreen (0.2,0.7,0.4,0.0);
+  }
+
+ else if (color==mediumslateblue){
+    Color mediumslateblue (0.4,0.4,0.9,0.0);
+  }
+
+ else if (color==mediumspringgreen){
+    Color mediumspringgreen (0.0,0.9,0.6,0.0);
+  }
+
+ else if (color==mediumturquoise){
+    Color mediumturquoise (0.2,0.8,0.8,0.0);
+  }
+
+ else if (color==mediumvioletred){
+    Color mediumvioletred (0.7,0.0,0.5,0.0);
+  }
+
+ else if (color==midnightblue){
+    Color midnightblue (0.0,0.0,0.4,0.0);
+  }
+
+ else if (color==mintcream){
+    Color mintcream (0.9,1.0,0.9,0.0);
+  }
+
+ else if (color==mistyrose){
+    Color mistyrose (1.0,0.9,0.9,0.0);
+  }
+
+ else if (color==moccasin){
+    Color moccasin (1.0,0.9,0.7,0.0);
+  }
+
+ else if (color==navajowhite){
+    Color navajowhite (1.0,0.8,0.6,0.0);
+  }
+
+ else if (color==navy){
+    Color navy (0.0,0.0,0.5,0.0);
+  }
+
 }
