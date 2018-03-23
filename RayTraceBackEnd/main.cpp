@@ -412,11 +412,12 @@ void makePyramid (Vect corner1, Vect corner2, Color color) // uses two points to
 }
 double getShapeSize(string scale,double shapeSize)
 {
+    ///determines size based string scale
     if(scale == "Scale to 25%")
     {
         shapeSize = shapeSize + 0.25;
     }
-    else if(scale == "Scale to 50%")
+    if(scale == "Scale to 50%")
     {
         shapeSize = shapeSize + 0.5;
     }
@@ -433,6 +434,7 @@ double getShapeSize(string scale,double shapeSize)
 
 Color ifTranslucentOrReflective(string translucent, string reflective, Color color)
 {
+    /// determines if object is translucent or reflective based on their string values
     if(translucent == "Yes")
     {
         color.setColorRed(0.0);
@@ -449,13 +451,662 @@ Color ifTranslucentOrReflective(string translucent, string reflective, Color col
 
 Color getColour(string color)
 {
+    /// determines colour of shape
     if(color == "pink")
     {
         Color colour (1.0,0.6,0.9,0.0);
         return colour;
     }
-    Color purple (0.95, 0.0, 1.0, 0.4);
-    return purple;
+    else if(color=="black")
+  {
+    Color Black (0.0,0.0,0.0,0.0);
+    return Black;
+  }
+  else if (color=="blue"){
+    Color Blue (0.0,0.0,0.5,0.0);
+    return Blue;
+  }
+  else if (color=="cyan"){
+    Color Cyan (0.0,0.9,0.9,0.0);
+    return Cyan;
+  }
+  else if (color=="darkblue"){
+    Color darkBlue (0.1,0,0.4,0.0);
+    return darkBlue;
+  }
+  else if (color=="darkcyan"){
+    Color darkCyan (0.1,0.6,0.8,0.0);
+    return darkCyan;
+  }
+  else if (color=="darkgray"){
+    Color darkGray (0.5,0.5,0.5,0.0);
+    return darkGray;
+  }
+  else if (color=="darkgreen"){
+    Color darkGreen (0.2,0.3,0.1,0.0);
+    return darkGreen;
+  }
+  else if (color=="darkred"){
+    Color darkRed (0.5,0.0,0.0,0.0);
+    return darkRed;
+  }
+  else if (color=="darkmagenta"){
+    Color darkMagenta (0.6,0.0,0.1,0.0);
+    return darkMagenta;
+  }
+   else if (color=="darkred"){
+    Color darkRed (0.7,0.0,0.0,0.0);
+    return darkRed;
+  }
+   else if (color=="darkyellow"){
+    Color darkYellow (1.0,0.9,0.1,0.0);
+    return darkYellow;
+  }
+  else if (color=="gray"){
+    Color gray (0.5,0.5,0.5,0.0);
+    return gray;
+  }
+  else if (color=="green"){
+    Color green (0.2,0.9,0.0,0.0);
+    return green;
+  }
+  else if (color=="lightgray"){
+    Color lightGray (0.7,0.7,0.7,0.0);
+    return lightGray;
+  }
+  else if (color=="magenta"){
+    Color magenta (1.0,0.0,1.0,0.0);
+    return magenta;
+  }
+  else if (color=="red"){
+    Color red (1.0,0.0,0.0,0.0);
+    return red;
+  }
+  else if (color=="white"){
+    Color white (1.0,1.0,1.0,0.0);
+    return white;
+  }
+  else if (color=="yellow"){
+    Color yellow (1.0,1.0,0.1,0.0);
+    return yellow;
+  }
+
+  //second section
+     else if (color=="fuchsia"){
+
+    Color fuchsia (07,0.0,0.7,0.0);
+    return fuchsia;
+}
+
+
+   else if (color=="forestgreen"){
+
+    Color forestgreen (0.3,0.4,0.1,0.0);
+    return forestgreen;
+
+}
+ else if (color=="ghostwhite"){
+
+    Color ghostwhite (0.9,0.9,0.9,0.0);
+    return ghostwhite;
+
+}
+ else if (color=="gainsboro"){
+
+    Color gainsboro(0.7,0.7,0.7,0.0);
+    return gainsboro;
+
+}
+
+ else if (color=="gold"){
+
+    Color gold (0.9,0.9,0.3,0.0);
+    return gold;
+
+}
+
+ else if (color=="goldenrod"){
+
+    Color goldenrod (0.9,0.7,0.0,0.0);
+    return goldenrod;
+
+}
+else if (color=="gray"){
+
+    Color gray (0.5,0.5,0.5,0.0);
+    return gray;
+
+}
+else if (color=="green"){
+
+    Color green (0.2,0.9,0.0,0.0);
+    return green;
+
+}
+else if (color=="greenyellow"){
+
+    Color greenyellow (0.7,1.0,0.0,0.0);
+    return greenyellow;
+
+}
+
+else if (color=="grey"){
+
+    Color grey (0.7,0.7,0.6,0.0);
+    return grey;
+}
+
+else if (color=="honeydew"){
+
+    Color honeydew (1.0,0.8,0.2,0.0);
+    return honeydew;
+}
+else if (color=="hotpink"){
+
+    Color hotpink (1.0,0.4,0.8,0.0);
+    return hotpink;
+}
+else if (color=="indianred"){
+
+    Color indianred (0.6,0.0,0.1,0.0);
+    return indianred;
+}
+else if (color=="indigo"){
+
+    Color indigo (0.4,0.2,1.0,0.0);
+    return indigo;
+}
+else if (color=="ivory"){
+
+    Color ivory (0.9,0.9,0.8,0.0);
+    return ivory;
+}
+else if (color=="khaki"){
+
+    Color khaki (0.8,0.8,0.6,0.0);
+    return khaki;
+}
+else if (color=="lavender"){
+
+    Color lavender (0.6,0.2,0.8,0.0);
+    return lavender;
+}
+else if (color=="lavenderblush"){
+
+    Color lavenderblush (0.8,0.6,0.7,0.0);
+    return lavenderblush;
+}
+ else if (color=="darkolivegreen"){
+    Color darkolivegreen (0.4,0.5,0.2,0.0);
+    return darkolivegreen;
+  }
+else if (color=="darkorange"){
+    Color darkorange (0.9,0.5,0.1,0.0);
+    return darkorange;
+  }
+else if (color=="darkorchid"){
+    Color darkorchid (0.6,0.2,0.8,0.0);
+    return darkorchid;
+  }
+else if (color=="darksalmon"){
+    Color darksalmon (1.0,0.6,0.5,0.0);
+    return darksalmon;
+  }
+else if (color=="darkseagreen"){
+    Color darkseagreen (0.5,0.7,0.5,0.0);
+    return darkseagreen;
+  }
+else if (color=="darkslateblue"){
+    Color darkslateblue (0.2,0.2,0.5,0.0);
+    return darkslateblue;
+  }
+else if (color=="darkslategray"){
+    Color darkslategray (0.1,0.3,0.3,0.0);
+    return darkslategray;
+  }
+else if (color=="darkturquoise"){
+    Color darkturquoise (0.2,0.8,0.8,0.0);
+    return darkturquoise;
+  }
+else if (color=="darkviolet"){
+    Color darkviolet (0.6,0.1,0.8,0.0);
+    return darkviolet;
+  }
+else if (color=="deeppink"){
+    Color deeppink (1.0,0.1,0.6,0.0);
+    return deeppink;
+  }
+else if (color=="deepskyblue"){
+    Color deepskyblue (0.0,0.8,1.0,0.0);
+    return deepskyblue;
+  }
+else if (color=="dimgray"){
+    Color dimgray (0.8,0.8,0.8,0.0);
+    return dimgray;
+  }
+else if (color=="dimgrey"){
+    Color dimgrey (0.8,0.8,0.8,0.0);
+    return dimgrey;
+  }
+else if (color=="dodgerblue"){
+    Color dodgerblue (0.0,0.6,1.0,0.0);
+    return dodgerblue;
+  }
+else if (color=="firebrick") {
+    Color firebrick (0.7,0.1,0.0,0.0);
+    return firebrick;
+  }
+else if (color=="floralwhite"){
+    Color floralwhite (1.0,1.0,0.9,0.0);
+    return floralwhite;
+  }
+
+  //third section
+  else if(color=="lawngreen")
+  {
+      Color lawngreen (0.1,0.7,0,0);
+      return lawngreen;
+  }
+  else if(color=="lemonchiffon")
+  {
+      Color lemonchiffon (1,1,0.8,0);
+      return lemonchiffon;
+  }
+  else if(color=="lightblue")
+  {
+      Color lightblue(0.1,0.7,1,0);
+      return lightblue;
+  }
+  else if(color=="lightcoral")
+  {
+      Color lightcoral(0.9,0.3,0.6,0);
+      return lightcoral;
+  }
+  else if(color=="lightcyan")
+  {
+      Color lightcyan(0.4,1,1,0);
+      return lightcyan;
+  }
+  else if(color=="lightgoldenrodyellow")
+  {
+      Color lightgoldenrodyellow(1,1,0.7,0);
+      return lightgoldenrodyellow;
+  }
+  else if(color=="lightgrey")
+  {
+      Color lightgrey(0.7,0.7,0.7,0);
+      return lightgrey;
+  }
+  else if(color=="lightgreen")
+  {
+      Color lightgreen(0.2,1,0.4,0);
+      return lightgreen;
+  }
+  else if(color=="lightpink")
+  {
+      Color lightpink(1.0,0.6,0.9,0);
+      return lightpink;
+  }
+  else if(color=="lightsalmon")
+  {
+      Color lightsalmon(1,0.6,0.7,0);
+      return lightsalmon;
+  }
+  else if(color=="lightseagreen")
+  {
+      Color lightseagreen(0.3,1,0.6,0);
+      return lightseagreen;
+  }
+  else if(color=="lightskyblue")
+  {
+      Color lightskyblue(0.6,0.6,1,0);
+      return lightskyblue;
+  }
+  else if(color=="lightslategray")
+  {
+      Color lightslategray(0.8,0.8,0.8,0);
+      return lightslategray;
+  }
+  else if(color=="lightslategrey")
+  {
+      Color lightslategrey(0.9,0.8,0.8,0);
+      return lightslategrey;
+  }
+  else if(color=="lightsteelblue")
+  {
+      Color lightsteelblue(0.7,0.7,1,0);
+      return lightsteelblue;
+  }
+  else if(color=="lightyellow")
+  {
+      Color lightyellow(1,1,0.8,0);
+      return lightyellow;
+  }
+  else if(color=="lime")
+  {
+      Color lime(0.4,0.7,0.2,0);
+      return lime;
+  }
+  else if(color=="limegreen")
+  {
+      Color limegreen(0.4,1,0.2,0);
+      return limegreen;
+  }
+  else if(color=="aliceblue")
+  {
+      Color aliceblue(0.0,0.7,0.1,0);
+      return aliceblue;
+  }
+  else if(color=="antiquewhite")
+  {
+    Color antiquewhite(1.0,0.9,0.8,0);
+    return antiquewhite;
+  }
+  else if(color=="aqua")
+  {
+    Color aqua(0.0,1.0,0.9,0);
+    return aqua;
+  }
+  else if(color=="aquamarine")
+  {
+    Color aquamarine(0.1,1.0,0.8,0);
+    return aquamarine;
+  }
+  else if(color=="beige")
+  {
+    Color beige(0.8,0.8,0.6,0);
+    return beige;
+  }
+  else if(color=="azure")
+  {
+    Color azure(0.8,0.9,0.9,0);
+    return azure;
+  }
+  else if(color=="bisque")
+  {
+    Color bisque(1,0.8,0.5,0);
+    return bisque;
+  }
+ else if(color=="blanchedalmond")
+  {
+    Color blanchedalmond(1,0.9,0.8,0);
+    return blanchedalmond;
+  }
+  else if(color=="blueviolet")
+  {
+    Color blueviolet(0.5,0.3,0.8,0);
+    return blueviolet;
+  }
+  else if(color=="burlywood")
+  {
+    Color burlywood(0.8,0.5,0.4,0);
+    return burlywood;
+  }
+  else if(color=="brown")
+  {
+    Color brown(0.8,0.4,0.0,0);
+    return brown;
+  }
+  else if(color=="cadetblue")
+  {
+    Color cadetblue(0.2,0.6,0.5,0);
+    return cadetblue;
+  }
+  else if(color=="chartreuse")
+  {
+    Color chartreuse(0.8,0.9,0.0,0);
+    return chartreuse;
+  }
+  else if(color=="chocolate")
+  {
+    Color chocolate(0.8,0.4,0.0,0);
+    return chocolate;
+  }
+  else if(color=="coral")
+  {
+    Color coral(0.9,0.5,0.5,0);
+    return coral;
+  }
+  else if(color=="cornflowerblue")
+  {
+    Color cornflowerblue(0.4,0.5,0.1,0);
+    return cornflowerblue;
+  }
+  else if(color=="cornfsilk")
+  {
+    Color cornsilk(0.9,0.9,0.5,0);
+    return cornsilk;
+  }
+  else if(color=="crimson")
+  {
+    Color crimson(0.9,0.9,0.5,0);
+    return crimson;
+  }
+  else if(color=="crimson")
+  {
+    Color crimson(0.6,0.2,0.2,0);
+    return crimson;
+  }
+  else if(color=="darkgoldenrod")
+  {
+    Color darkgoldenrod(0.7,0.5,0.1,0);
+    return darkgoldenrod;
+  }
+  else if (color=="darkgrey")
+  {
+    Color darkgrey(0.6,0.6,0.6,0);
+    return darkgrey;
+  }
+  else if (color=="darkkhaki")
+  {
+    Color darkkhaki(0.7,0.7,0.4,0);
+    return darkkhaki;
+  }
+
+ else if (color=="linen"){
+    Color linen (1.0,0.9,0.8,0.0);
+    return linen;
+  }
+
+ else if (color=="magenta"){
+    Color magenta (1.0,0.0,1.0,0.0);
+    return magenta;
+  }
+
+ else if (color=="maroon"){
+    Color maroon (0.5,0.0,0.0,0.0);
+    return maroon;
+  }
+
+ else if (color=="mediumaquamarine"){
+    Color mediumaquamarine (0.4,0.8,0.7,0.0);
+    return mediumaquamarine;
+  }
+
+ else if (color=="mediumblue"){
+    Color mediumblue (0.0,0.0,0.8,0.0);
+    return mediumblue;
+  }
+
+ else if (color=="mediumorchid"){
+    Color mediumorchid (0.7,0.3,0.8,0.0);
+    return mediumorchid;
+  }
+
+ else if (color=="mediumpurple"){
+    Color mediumpurple (0.5,0.4,0.8,0.0);
+    return mediumpurple;
+  }
+
+ else if (color=="mediumseagreen"){
+    Color mediumseagreen (0.2,0.7,0.4,0.0);
+    return mediumseagreen;
+  }
+
+ else if (color=="mediumslateblue"){
+    Color mediumslateblue (0.4,0.4,0.9,0.0);
+    return mediumslateblue;
+  }
+
+ else if (color=="mediumspringgreen"){
+    Color mediumspringgreen (0.0,0.9,0.6,0.0);
+    return mediumspringgreen;
+  }
+
+ else if (color=="mediumturquoise"){
+    Color mediumturquoise (0.2,0.8,0.8,0.0);
+    return mediumturquoise;
+  }
+
+ else if (color=="mediumvioletred"){
+    Color mediumvioletred (0.7,0.0,0.5,0.0);
+    return mediumvioletred;
+  }
+
+ else if (color=="midnightblue"){
+    Color midnightblue (0.0,0.0,0.4,0.0);
+    return midnightblue;
+  }
+
+ else if (color=="mintcream"){
+    Color mintcream (0.9,1.0,0.9,0.0);
+    return mintcream;
+  }
+
+ else if (color=="mistyrose"){
+    Color mistyrose (1.0,0.9,0.9,0.0);
+    return mistyrose;
+  }
+
+ else if (color=="moccasin"){
+    Color moccasin (1.0,0.9,0.7,0.0);
+    return moccasin;
+  }
+
+ else if (color=="navajowhite"){
+    Color navajowhite (1.0,0.8,0.6,0.0);
+    return navajowhite;
+  }
+
+ else if (color=="navy"){
+    Color navy (0.0,0.0,0.5,0.0);
+    return navy;
+  }
+  else if (color=="red")
+  {
+      Color red (1,0,0,0);
+      return red;
+  }
+  else if(color=="rosybrown")
+  {
+      Color rosybrown(0.7,0.2,0,0);
+      return rosybrown;
+  }
+  else if(color=="royalblue")
+  {
+      Color royalblue(0.3,0,0.9,0);
+      return royalblue;
+  }
+  else if(color=="saddlebrown")
+  {
+      Color saddlebrown(0.4,0.2,0.1,0);
+      return saddlebrown;
+  }
+  else if(color=="salmon")
+  {
+      Color salmon(0.8,0.6,0.6,0);
+      return salmon;
+  }
+  else if(color=="sandybrown")
+  {
+      Color sandybrown(0.8,0.8,0.5,0);
+      return sandybrown;
+  }
+  else if(color=="seagreen")
+  {
+      Color seagreen(0.2,1,0.8,0);
+      return seagreen;
+  }
+  else if(color=="seashell")
+  {
+      Color seashell(1.0,0.8,0.9,0);
+      return seashell;
+  }
+  else if(color=="silver")
+  {
+      Color silver(0.9,0.9,1,0);
+      return silver;
+  }
+  else if (color=="oldlace"){
+    Color oldlace (1,0.9,1,0.0);
+    return oldlace;
+  }
+   else if (color=="olive"){
+    Color olive (0.7,0.7,0.3,0.0);
+    return olive;
+  }
+  else if (color=="olivedrab"){
+    Color olivedrab (0.5,0.5,0.3,0.0);
+    return olivedrab;
+  }
+   else if (color=="orange"){
+    Color orange (1,0.6,0.0,0.0);
+    return orange;
+  }
+   else if (color=="orangered"){
+    Color orangered (1,0.3,0.2,0.0);
+    return orangered;
+  }
+   else if (color=="orchid"){
+    Color Orchid (0.9,0.4,0.9,0.0);
+    return Orchid;
+  }
+   else if (color=="palegoldenrod"){
+    Color palegoldenrod (1,0.9,0.6,0.0);
+    return palegoldenrod;
+  }
+   else if (color=="palegreen"){
+    Color palegreen (0.6,1,0.6,0.0);
+    return palegreen;
+  }
+    else if (color=="paleturquoise"){
+    Color paleturquoise (0.7,1,1,0.0);
+    return paleturquoise;
+  }
+
+   else if (color=="palevioletred"){
+    Color palevioletred (0.9,0.4,0.8,0.0);
+    return palevioletred;
+  }
+   else if (color=="papayawhip"){
+    Color papayawhip (1,0.9,0.8,0.0);
+    return papayawhip;
+  }
+  else if (color=="peachpuff"){
+    Color peachpuff (1,0.7,0.6,0.0);
+    return peachpuff;
+  }
+   else if (color=="peru"){
+    Color Peru (0.9,0.5,0.2,0.0);
+    return Peru;
+  }
+   else if (color=="pink"){
+    Color pink (1,0,0.7,0.0);
+    return pink;
+  }
+   else if (color=="plum"){
+    Color plum (0.4,0.1,0.6,0.0);
+    return plum;
+  }
+   else if (color=="powderblue"){
+    Color powderblue (0.8,1,1,0.0);
+    return powderblue;
+  }
+  else
+  {
+      Color purple (0.95, 0.0, 1.0, 0.4);
+      return purple;
+  }
 }
 
 int thisone;
@@ -477,7 +1128,9 @@ int main (int argc, char *argv[]) {
         string username(uname);
 
         std::stringstream ss;
-        ss << "C:\\Users\\" << username << "\\Documents\\GitHub\\RayTracerKCL\\RayTraceFrontEnd\\Scene.txt";
+        //ss << "C:\\Users\\" << username << "\\Documents\\GitHub\\RayTracerKCL\\RayTraceFrontEnd\\Scene.txt";
+        ss << "C:\\Users\\" << username << "\\Desktop\\RayTracerKCL\\RayTraceFrontEnd\\Scene.txt";
+        ///for the ray tracer to work with user input please save the project in the desktop.
         std::string fileLocation = ss.str();
 
         ifstream myReadFile;
