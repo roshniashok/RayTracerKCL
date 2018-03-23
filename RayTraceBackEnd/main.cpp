@@ -1102,6 +1102,87 @@ else if (color=="floralwhite"){
     Color powderblue (0.8,1,1,0.0);
     return powderblue;
   }
+  else if(color=="skyblue")
+  {
+      Color skyblue(0.7,0.6,1,0);
+      return skyblue;
+  }
+  else if(color=="slateblue")
+  {
+      Color slateblue(0.8,0.7,0.9,0);
+      return slateblue;
+  }
+  else if(color=="slategray")
+  {
+      Color slategray(0.8,0.8,0.8,0);
+      return slategray;
+  }
+  else if(color=="slategrey")
+  {
+      Color slategrey(0.9,0.9,0.9,0);
+      return slategrey;
+  }
+  else if(color=="snow")
+  {
+      Color snow(1,1,1,0);
+      return snow;
+  }
+  else if(color=="springgreen")
+  {
+      Color springgreen(0.4,1,0.4,0);
+      return springgreen;
+  }
+  else if(color=="steelblue")
+  {
+      Color steelblue(0.4,0.4,1,0);
+      return steelblue;
+  }
+  else if(color=="tan")
+  {
+      Color tan(0.8,0.7,0.6,0);
+      return tan;
+  }
+  else if(color=="teal")
+  {
+      Color teal(0.6,1,0.9,0);
+      return teal;
+  }
+  else if (color=="thistle"){
+    Color Thistle (0.7,0.7,1,0.0);
+    return Thistle;
+  }
+   else if (color=="tomato"){
+    Color tomato (1,0.5,0.5,0.0);
+    return tomato;
+  }
+  else if (color=="transparent"){
+    Color transparent(0,0,0,0.0);
+    return transparent;
+  }
+   else if (color=="turquoise"){
+    Color turquoise (0.6,1,1,0.0);
+    return turquoise;
+  }
+   else if (color=="violet"){
+    Color violet(0.4,0,1,0.0);
+    return violet;
+  }
+   else if (color=="wheat"){
+    Color wheat (1,0.9,0.7,0.0);
+    return wheat;
+  }
+   else if (color=="whitesmoke"){
+    Color whitesmoke (0.9,0.9,0.9,0.0);
+    return whitesmoke;
+  }
+   else if (color=="yellow"){
+    Color yellow  (1,1,0.0,0.0);
+    return yellow;
+  }
+    else if (color=="yellowgreen"){
+    Color yellowgreen (0.7,0.9,0.1,0.0);
+    return yellowgreen;
+  }
   else
   {
       Color purple (0.95, 0.0, 1.0, 0.4);
