@@ -1,5 +1,0 @@
-Circle
-Scale to 50%
-red
-No
-Yes
