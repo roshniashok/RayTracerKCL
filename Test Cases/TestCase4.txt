@@ -1,5 +1,0 @@
-Circle
-Scale to 0%
-yellow
-No
-Yes

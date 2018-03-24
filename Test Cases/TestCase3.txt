@@ -1,5 +1,0 @@
-Circle
-Scale to 100%
-pink
-No
-Yes
