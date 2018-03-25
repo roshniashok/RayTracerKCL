@@ -38,6 +38,8 @@ private:
     QLabel *shapeLabel;
     QLabel *sizeLabel;
     QLabel *colorLabel;
+    QLabel *translucentLabel;
+    QLabel *reflectiveLabel;
     QPushButton *saveButton;
     QPushButton *closeButton;
 
