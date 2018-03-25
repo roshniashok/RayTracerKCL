@@ -15,13 +15,13 @@ Middle East group is a group made of 6 members :
 
 We have used C++ for the implementation of the front and the backend and used QTCreator for the front-end.
 
-Execution Instructions
+## Execution Instructions
 
 	Have the Project Folder RayTracerKCL stored on your Desktop
 	So that the Scene.txt will always be saved in the directory:
 		C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTraceFrontEnd
 		
- From the Front-End
+## From the Front-End
 1. Install QT 
 2. Load QT
 3. Open File
@@ -33,7 +33,7 @@ Execution Instructions
 9. Go to the C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTraceFrontEnd folder to view the image Scene.png
 
 
-From the Back-End
+## From the Back-End
 
  - If you you have all the neccessary c++ files installed and added to your systems enviroment variables:
    - Double click on the RayTrace3.exe file in the directory 
