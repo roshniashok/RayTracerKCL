@@ -1210,7 +1210,8 @@ int main (int argc, char *argv[]) {
 
         std::stringstream ss;
         //ss << "C:\\Users\\" << username << "\\Documents\\GitHub\\RayTracerKCL\\RayTraceFrontEnd\\Scene.txt";
-        ss << "C:\\Users\\" << username << "\\Desktop\\RayTracerKCL\\RayTraceFrontEnd\\Scene.txt";
+        //ss << "C:\\Users\\" << username << "\\Desktop\\RayTracerKCL\\RayTraceFrontEnd\\Scene.txt";
+        ss << "C:\\Users\\" << username << "\\Desktop\\RayTracerKCL\\RayTracerLinker\\Scene.txt";
         ///for the ray tracer to work with user input please save the project in the desktop.
         std::string fileLocation = ss.str();
 
