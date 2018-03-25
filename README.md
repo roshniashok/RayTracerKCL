@@ -1,4 +1,4 @@
-RayTracerKCL :
+##RayTracerKCL :
 
 This project is part of the group project that is to be implemented in King's College London.
 
