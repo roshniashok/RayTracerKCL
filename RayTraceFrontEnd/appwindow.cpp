@@ -100,8 +100,8 @@ Appwindow::Appwindow()
     mainLayout->addWidget(translucentComboBox, 4,1,1,3);
     mainLayout->addWidget(reflectiveLabel, 5,0);
     mainLayout->addWidget(reflectiveComboBox, 5,1,1,3);
-   mainLayout->addWidget(saveButton,5,1,Qt::AlignRight);
-   mainLayout->addWidget(closeButton,5,2,Qt::AlignLeft);
+   mainLayout->addWidget(saveButton,7,1,Qt::AlignRight);
+   mainLayout->addWidget(closeButton,7,2,Qt::AlignLeft);
 
     setLayout(mainLayout);
     drawShapes();
