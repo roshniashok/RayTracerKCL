@@ -1261,8 +1261,12 @@ int main (int argc, char *argv[]) {
 	t1 = clock(); // start time
 
 	int dpi = 72;
-	int width = 500; //image width
-	int height = 500; //image height
+	int width = 0; //image width
+	cout << "\nGive width:";
+	cin >> width; // get user width
+	int height = 0; //image height
+	cout << "\nGive height:";
+	cin >> height; // get user height
 	int n = width*height;
 	RGBType *pixels = new RGBType[n];
 
@@ -1453,7 +1457,16 @@ int main (int argc, char *argv[]) {
 		}
 	}
 
-	savepng("scene.png",width,height,dpi,pixels); //calls method to save png file
+	string filename = "";
+	cout <<"\nGive file name:";
+	cin >> filename;
+	filename = filename + ".png";
+	//cout <<"\n"<<filename;
+	//string f = filename;
+	char *f=new char[filename.size()+1];
+    f[filename.size()]=0;
+    memcpy(f,filename.c_str(),filename.size());
+	savepng(f,width,height,dpi,pixels); //calls method to save png file
 
 	delete pixels, tempRed, tempGreen, tempBlue;
 
