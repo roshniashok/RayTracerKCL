@@ -6,6 +6,7 @@
 package raytracerlinker;
 
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
@@ -135,21 +136,21 @@ public class RayTracerLinker extends javax.swing.JFrame {
         String filename = JOptionPane.showInputDialog("Give File name:");
         ImageIO.write(resizeImagePng, "png", new File(filename+".png")); 
                 
-    }catch(IOException e){
-        System.out.println(e.getMessage());
-    }
+        }catch(IOException e){
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_getBackEndActionPerformed
 
     
     private static BufferedImage resizeImage(BufferedImage originalImage, int type){
         int height = Integer.parseInt(JOptionPane.showInputDialog("Give File height:"));
         int width = Integer.parseInt(JOptionPane.showInputDialog("Give File width:"));
-        BufferedImage resizedImage = new BufferedImage(width, height, type);
-        Graphics2D g = resizedImage.createGraphics();
-        g.drawImage(originalImage, 0, 0, 200, 200, null);
-        g.dispose();
-        
-    return resizedImage;
+        Image tmp = originalImage.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        BufferedImage resized = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2d = resized.createGraphics();
+        g2d.drawImage(tmp, 0, 0, null);
+        g2d.dispose();
+        return resized;
    }
     /**
      * @param args the command line arguments
