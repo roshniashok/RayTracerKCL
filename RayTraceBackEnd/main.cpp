@@ -1261,7 +1261,7 @@ int main (int argc, char *argv[]) {
 	t1 = clock(); // start time
 
 	int dpi = 72;
-	int width = 500; //image width
+	int width = 500; //image width// get user width
 	int height = 500; //image height
 	int n = width*height;
 	RGBType *pixels = new RGBType[n];

@@ -13,6 +13,7 @@
 #include<iostream>
 #include<fstream>
 #include<QMessageBox>
+//#include<QProcess>
 
 
 Appwindow::Appwindow()
@@ -100,8 +101,8 @@ Appwindow::Appwindow()
     mainLayout->addWidget(translucentComboBox, 4,1,1,3);
     mainLayout->addWidget(reflectiveLabel, 5,0);
     mainLayout->addWidget(reflectiveComboBox, 5,1,1,3);
-   mainLayout->addWidget(saveButton,5,1,Qt::AlignRight);
-   mainLayout->addWidget(closeButton,5,2,Qt::AlignLeft);
+   mainLayout->addWidget(saveButton,7,1,Qt::AlignRight);
+   mainLayout->addWidget(closeButton,7,2,Qt::AlignLeft);
 
     setLayout(mainLayout);
     drawShapes();
@@ -187,9 +188,15 @@ void Appwindow::saveToFile()
 
     file<<shape<<"\n"<<size<<"\n"<<color<<"\n"<<trans<<"\n"<<reflec;
 
-  QMessageBox msgBox;
+
+  /*QMessageBox msgBox;
     msgBox.setText("The file has been saved");
-    msgBox.exec();
+    msgBox.exec();*/
+
+    //Run the backend
+    //QProcess* process=new QProcess();
+    //process->start("RayTrace3.exe");
+    std::system("RayTrace3.exe");
     
     /* QString filename="Scene.txt";
     QFile file(filename);

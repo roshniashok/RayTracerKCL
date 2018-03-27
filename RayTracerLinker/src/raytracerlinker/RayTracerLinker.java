@@ -5,10 +5,14 @@
  */
 package raytracerlinker;
 
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 
 /**
@@ -121,8 +125,32 @@ public class RayTracerLinker extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, ioe);
         }
+        
+        try{
+            
+        BufferedImage originalImage = ImageIO.read(new File("scene.png"));
+        int type = originalImage.getType() == 0? BufferedImage.TYPE_INT_ARGB : originalImage.getType();
+            
+        BufferedImage resizeImagePng = resizeImage(originalImage, type);
+        String filename = JOptionPane.showInputDialog("Give File name:");
+        ImageIO.write(resizeImagePng, "png", new File(filename+".png")); 
+                
+    }catch(IOException e){
+        System.out.println(e.getMessage());
+    }
     }//GEN-LAST:event_getBackEndActionPerformed
 
+    
+    private static BufferedImage resizeImage(BufferedImage originalImage, int type){
+        int height = Integer.parseInt(JOptionPane.showInputDialog("Give File height:"));
+        int width = Integer.parseInt(JOptionPane.showInputDialog("Give File width:"));
+        BufferedImage resizedImage = new BufferedImage(width, height, type);
+        Graphics2D g = resizedImage.createGraphics();
+        g.drawImage(originalImage, 0, 0, 200, 200, null);
+        g.dispose();
+        
+    return resizedImage;
+   }
     /**
      * @param args the command line arguments
      */
