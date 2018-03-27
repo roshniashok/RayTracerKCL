@@ -13,6 +13,7 @@
 #include<iostream>
 #include<fstream>
 #include<QMessageBox>
+//#include<QProcess>
 
 
 Appwindow::Appwindow()
@@ -187,9 +188,15 @@ void Appwindow::saveToFile()
 
     file<<shape<<"\n"<<size<<"\n"<<color<<"\n"<<trans<<"\n"<<reflec;
 
-  QMessageBox msgBox;
+
+  /*QMessageBox msgBox;
     msgBox.setText("The file has been saved");
-    msgBox.exec();
+    msgBox.exec();*/
+
+    //Run the backend
+    //QProcess* process=new QProcess();
+    //process->start("RayTrace3.exe");
+    std::system("RayTrace3.exe");
     
     /* QString filename="Scene.txt";
     QFile file(filename);
