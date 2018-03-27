@@ -19,7 +19,15 @@ We have used C++ for the implementation of the front and the backend and used QT
 
 	Have the Project Folder RayTracerKCL stored on your Desktop
 	So that the Scene.txt will always be saved in the directory:
-		C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTraceFrontEnd
+		C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTracerLinker
+
+## From the RayTracerLinker
+1. Go to the directory C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTracerLinker
+2. Double click on the RayTracerLinker jar file
+3. While it running select the Draw Image to run the front end and select the inputs you desire and then hit the save button
+4. After closing the front end select the Render Image button for the backend to render the image
+	5. Type your desired file width height and name for the image
+6. Return to the C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTracerLinker directory and select the image file of the name you have described
 		
 ## From the Front-End
 1. Install QT 
@@ -30,7 +38,8 @@ We have used C++ for the implementation of the front and the backend and used QT
 6. Press the run button
 7. Select any values you want for each drop down menu
 8. Press save when happy with the image you want 
-9. Go to the C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTraceFrontEnd folder to view the image Scene.png
+9. Go to the C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTracerLinker to view your text file
+10. Then implement the backend following the backend instructions bellow
 
 
 ## From the Back-End
