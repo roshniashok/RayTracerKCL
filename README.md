@@ -1,8 +1,9 @@
+
 ## RayTracerKCL :
 
 This project is part of the group project that is to be implemented in King's College London.
 
-Ray Tracing is a rendering technique which takes simple 2D objects such as circles,squares or rectangles and produces 3D rendering of these objects in the form of spheres,cubes,cuboid. We have implemented a Raytracer using this raytracing technique.
+Ray Tracing is a rendering technique which takes simple 2D objects such as circles, squares or rectangles and produces a 3D rendering of these objects in the form of spheres, cubes, cuboid etc. We have implemented a Raytracer using this raytracing technique.
 
 Middle East group is a group made of 6 members :
 
@@ -20,6 +21,7 @@ We have used C++ for the implementation of the front and the backend and used QT
 	Have the Project Folder RayTracerKCL stored on your Desktop
 	So that the Scene.txt will always be saved in the directory:
 		C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTracerLinker
+		Download debug.zip folder and ibstdc++-6.zip in C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTracerLinker directory
 
 ## From the RayTracerLinker
 1. Go to the directory C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTracerLinker
@@ -44,7 +46,7 @@ We have used C++ for the implementation of the front and the backend and used QT
 
 ## From the Back-End
 
- - If you you have all the neccessary c++ files installed and added to your systems enviroment variables:
+ - If you have all the necessary C++ files installed and added to your systems environment variables:
    - Double click on the RayTrace3.exe file in the directory 
 		C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTraceBackEnd
 		
@@ -52,7 +54,7 @@ We have used C++ for the implementation of the front and the backend and used QT
 
 1. Install CodeBlocks 
 2. Go to C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTraceBackEnd
-3. Double click on RayTrace3 project 
+3. Double click on the RayTrace3 project 
 4. Wait for it to load up
 5. Click the Build and run button in CodeBlocks 
 6. Go back to the folder in C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTraceBackEnd
