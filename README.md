@@ -21,7 +21,9 @@ We have used C++ for the implementation of the front and the backend and used QT
 	Have the Project Folder RayTracerKCL stored on your Desktop
 	So that the Scene.txt will always be saved in the directory:
 		C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTracerLinker
-		Download debug.zip folder and ibstdc++-6.zip in C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTracerLinker directory
+		Download debug.zip folder from https://drive.google.com/open?id=1V0J4rM9eGbainumFdVNG4ta_tDBhea0-
+			 and libstdc++-6.zip from https://drive.google.com/open?id=10vOvQHX8YaObEu4taB3iXnnelYNlLDhm
+			 and extract it into C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTracerLinker directory
 
 ## From the RayTracerLinker
 1. Go to the directory C:\Users\YOUR USER NAME\Desktop\RayTracerKCL\RayTracerLinker
